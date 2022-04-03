@@ -1,0 +1,1 @@
+Aqui van los datos genericos, son como variables globales que se pueden utilizar en cualquier parte del código, facilitan la interpretación del código.
