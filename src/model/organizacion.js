@@ -30,8 +30,10 @@ const organizacionSchema = new Schema({
 
     telefono: {
         type: String,
-        require: true,
+        require: true
     },
+},{
+    versionKey: false
 })
 
 export default model ('Organizacion', organizacionSchema)
