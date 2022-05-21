@@ -1,6 +1,13 @@
-import express from "express";
+import app from './app'
+import { config } from "dotenv";
+import './database/database'
+import mongoose from 'mongoose';
 
-const app = express()
+config();
 
-app.listen(4000)
-console.log('Server listen on port', 4000)
+const main = () => {
+    app.listen(process.env.PORT);
+    console.log('Server listen on port', process.env.PORT)
+};
+
+main();
