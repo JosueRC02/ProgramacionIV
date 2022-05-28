@@ -8,7 +8,7 @@ const empleadosSchema = new Schema({
     fec_nac_empleado: Date,
     edad_empleado: Number,
     nacionalidad_empleado: String,
-    direccon_empleado: String,
+    direccion_empleado: String,
     correo_empleado: String,
     telefono_empleado: String,
     fec_ingreso_empleado: Date,

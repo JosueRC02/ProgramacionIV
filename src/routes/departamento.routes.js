@@ -3,6 +3,6 @@ import * as departamentoCtrl from '../controller/departamento.controller';
 
 const router = Router()
 
-router.post('/', departamentoCtrl.postDepartamentos)
+router.post('/', departamentoCtrl.signUpDepartamento)
 
 export default router;
