@@ -1,7 +1,5 @@
 import departamento from "../model/departamento"
 import Empleado from "../model/empleado"
-import jwt from 'jsonwebtoken'
-import config from '../config'
 
 export const signUpDepartamento = async (req, res) => {
     const {codigo_departamento, nombre_departamento, empleados_departamento, correo_departamento, telefono_departamento, password} = req.body
@@ -16,13 +14,7 @@ export const signUpDepartamento = async (req, res) => {
     }else{
         console.log("No sirve");
     }
-    const departamentoSaved = await newDepartamento.save()
-    //console.log(departamentoSaved);
-    //res.status(201).json(departamentoSaved)
-
-    const token = jwt.sign({id: departamentoSaved._id}, config.SECRET, {
-        expiresIn: 18000 // 5 horas
-    })
-
-    res.status(200).json({token})
+    const departamentoSaved = await newDepartamento.save();
+    console.log(departamentoSaved);
+    res.status(201).json(departamentoSaved);
 }
