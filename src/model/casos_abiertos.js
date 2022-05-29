@@ -1,9 +1,22 @@
 import {Schema, model} from 'mongoose'
 
 const casos_abiertosSchema = new Schema({
-    codigo_caso: Number,
-    fecha_apertura_caso : Date,
-    fecha_finalizacion_caso : Date
+
+    codigo_caso:{
+        type: String,
+        required: true
+    },
+
+    fecha_apertura_caso:{
+        type: Date,
+        required: true
+    },
+
+    fecha_finalizacion_caso:{
+        type: Date,
+        required: true
+    },
+    
 },{
     versionKey: false
 })

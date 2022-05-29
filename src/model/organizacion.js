@@ -32,8 +32,13 @@ const organizacionSchema = new Schema({
         type: String,
         require: true
     },
+
+    departamentos_organizacion: [{
+        ref: "departamento",
+        type: Schema.Types.ObjectId
+    }],
 },{
     versionKey: false
 })
 
-export default model ('Organizacion', organizacionSchema)
+export default model ('organizacion', organizacionSchema)
