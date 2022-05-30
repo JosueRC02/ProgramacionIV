@@ -1,7 +1,7 @@
 import {Schema, model} from 'mongoose'
 
 const empleadosSchema = new Schema({
-    codigo_empleado: String,
+    codigo_empleado:String,
     nombre_empleado: String,
     primer_apellido_empleado: String,
     segundo_apellido_empleado: String,

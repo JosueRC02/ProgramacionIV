@@ -1,1 +1,0 @@
-Aqui van todos los modelos de la BD, son estilos clases para cuando utilicen los datos poderlos mapear como objetos

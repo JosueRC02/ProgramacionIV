@@ -9,7 +9,7 @@ const organizacionSchema = new Schema({
         max: 255
     },
 
-    password:{
+    codigo_organizacion:{
         type: String,
         required: true
     },
