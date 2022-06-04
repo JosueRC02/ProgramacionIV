@@ -1,18 +1,18 @@
 import {Schema, model} from 'mongoose'
 
 const empleadosSchema = new Schema({
-    codigo_empleado: String,
-    nombre_departamento: String,
-    nombre_empleado: String,
-    primer_apellido_empleado: String,
-    segundo_apellido_empleado: String,
-    fec_nac_empleado: Date,
-    nacionalidad_empleado: String,
-    direccion_empleado: String,
-    correo_empleado: String,
-    telefono_empleado: String,
-    fec_ingreso_empleado: Date,
-    puesto_empleado: String
+    codigo_empleado: {type: String},
+    nombre_departamento: {ref: "departamento", type: Schema.Types.ObjectId},
+    nombre_empleado: {type: String},
+    primer_apellido_empleado: {type: String},
+    segundo_apellido_empleado: {type: String},
+    fec_nac_empleado: {type: Date},
+    nacionalidad_empleado: {type: String},
+    direccion_empleado: {type: String},
+    correo_empleado: {type: String},
+    telefono_empleado: {type: String},
+    fec_ingreso_empleado: {type: Date},
+    puesto_empleado: {type: String},
 },{
     versionKey: false
 })

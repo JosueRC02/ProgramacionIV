@@ -1,4 +1,5 @@
 import {Schema, model} from 'mongoose'
+import bcrypt from 'bcryptjs';
 
 const organizacionSchema = new Schema({
     nombre_organizacion: {
@@ -33,12 +34,21 @@ const organizacionSchema = new Schema({
         require: true
     },
 
-    departamentos_organizacion: [{
-        ref: "departamento",
-        type: Schema.Types.ObjectId
-    }],
+    password: {
+        type: String,
+        require: true
+    },
 },{
     versionKey: false
 })
+
+organizacionSchema.statics.encryptpassword = async (password) => {
+    const salt = await bcrypt.genSalt(10)
+    return await bcrypt.hash(password, salt)
+}
+
+organizacionSchema.statics.comparepassword = async (password, receivedPassword) => {
+    return await bcrypt.compare(password, receivedPassword)
+}
 
 export default model ('organizacion', organizacionSchema)

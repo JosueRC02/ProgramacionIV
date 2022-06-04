@@ -6,20 +6,16 @@ const tramitesSchema = new Schema({
         required: true
     },
 
+    codigo_departamento:{
+        ref: "departamento", 
+        type: Schema.Types.ObjectId
+    },
+
     tipo_tramite:{
         type: String,
         required: true
     },
 
-    documentos_tramite:[{
-        ref: "documento",
-        type: Schema.Types.ObjectId
-    }],
-
-    casos_abiertos_tramite:[{
-        ref: "casos_abiertos",
-        type: Schema.Types.ObjectId
-    }],
 },{
     versionKey: false
 })
