@@ -1,12 +1,12 @@
 import {Schema, model} from 'mongoose'
 
 const empleadosSchema = new Schema({
-    codigo_empleado:String,
+    codigo_empleado: String,
+    nombre_departamento: String,
     nombre_empleado: String,
     primer_apellido_empleado: String,
     segundo_apellido_empleado: String,
     fec_nac_empleado: Date,
-    edad_empleado: Number,
     nacionalidad_empleado: String,
     direccion_empleado: String,
     correo_empleado: String,
