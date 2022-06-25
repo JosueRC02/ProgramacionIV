@@ -26,3 +26,18 @@ export const postDepartamento = async (req, res) => {
     }
     
 }
+
+export const getDepartamento = async (req, res) => {
+    try {
+        const ListaDepartamentos = await departamento.find();
+        res.json(new BaseResponse(
+            "Departamentos",
+            "Retorna todos las departamentos",
+            ListaDepartamentos));
+    } catch (error) {
+        res.status(400).json(new ResponseError(
+            "Error al retornar los departamentos",
+            error.message
+        ));
+    }
+};
