@@ -5,6 +5,6 @@ const router = Router()
 
 router.post('/singUpOrganizacion', organizacionCtrl.singUpOrganizacion)
 router.post('/singInOrganizacion', organizacionCtrl.signInOrganizacion)
-router.get('/getOrganizaciones', organizacionCtrl.getOrganizaciones)
+router.get('/', organizacionCtrl.getOrganizaciones)
 
 export default router;
