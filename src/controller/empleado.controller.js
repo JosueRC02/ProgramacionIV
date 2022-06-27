@@ -1,4 +1,3 @@
-import departamento from "../model/departamento";
 import Departamento from "../model/departamento";
 import empleado from "../model/empleado"
 import BaseResponse from "../response/BaseResponse";
@@ -23,6 +22,21 @@ export const postEmpleados = async (req, res) => {
     } catch (error) {
         res.status(400).json(new ResponseError(
             "Error al agregar el empleado",
+            error.message
+        ));
+    }
+};
+
+export const getEmpleados = async (req, res) => {
+    try {
+        const empleados = await empleado.find();
+        res.json(new BaseResponse(
+            "Organizaciones",
+            "Retorna todas los empleados",
+            empleados));
+    } catch (error) {
+        res.status(400).json(new ResponseError(
+            "Error al retornar los empleados",
             error.message
         ));
     }
