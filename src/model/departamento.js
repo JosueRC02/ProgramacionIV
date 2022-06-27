@@ -11,7 +11,8 @@ const departamentosSchema = new Schema({
     },
     organizacion: {
         ref: "organizacion", 
-        type: Schema.Types.ObjectId
+        type: Schema.Types.ObjectId,
+        unique: false
     },
     correo_departamento: {
         type: String,

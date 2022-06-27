@@ -1,4 +1,5 @@
 import departamento from "../model/departamento"
+import organizacion from "../model/organizacion";
 import Organizacion from "../model/organizacion"	
 import BaseResponse from "../response/BaseResponse";
 import ResponseError from "../response/ResponseError";
@@ -40,4 +41,20 @@ export const getDepartamento = async (req, res) => {
             error.message
         ));
     }
+};
+
+export const getNDepartamento = async (req, res) => {
+    try {
+        const ListaDepartamentos = await organizacion.findById(req.params.organizacionId);
+        res.json(new BaseResponse(
+            "Departamentos",
+            "Retorna todos las departamentos",
+            ListaDepartamentos));
+    } catch (error) {
+        res.status(400).json(new ResponseError(
+            "Error al retornar los departamentos",
+            error.message
+        ));
+    }
+
 };
