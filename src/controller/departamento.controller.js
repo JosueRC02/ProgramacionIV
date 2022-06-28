@@ -43,6 +43,38 @@ export const getDepartamento = async (req, res) => {
     }
 };
 
+export const updateDepartamentoById = async (req, res) => {
+    try{
+    const updatedDepartamento = await departamento.findByIdAndUpdate(req.params.departamentoId, req.body, {
+        new: true
+    });
+    res.status(200).json(new BaseResponse(
+        "Departamentos",
+        "Departamento actualizado",
+        updatedDepartamento));
+    }catch (error){
+    res.status(400).json(new ResponseError(
+        "Error al actualizar el departamento",
+        error.message
+    ));
+    }
+};
+
+export const deleteDepartamentoById = async (req, res) => {
+    try {
+        const departamentoIdDelete = await departamento.findByIdAndDelete(req.params.departamentoId);
+        res.status(200).json(new BaseResponse(
+            "Departamentos",
+            "Se elimino un departamento con exito",
+            departamentoIdDelete));
+    }catch (error) {
+        res.status(400).json(new ResponseError(
+            "Error al eliminar el departamento",
+            error.message
+        ));
+    }
+}
+
 export const getNDepartamento = async (req, res) => {
     try {
         const ListaDepartamentos = await organizacion.findById(req.params.organizacionId);
