@@ -5,5 +5,7 @@ const router = Router()
 
 router.post('/', empleadoCtrl.postEmpleados)
 router.get('/', empleadoCtrl.getEmpleados)
+router.put('/:empleadoId', empleadoCtrl.updateEmpleadoById)
+router.delete('/:empleadoId', empleadoCtrl.deleteEmpleadoById)
 
 export default router;

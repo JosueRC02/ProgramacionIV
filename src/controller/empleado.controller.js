@@ -42,3 +42,35 @@ export const getEmpleados = async (req, res) => {
         ));
     }
 };
+
+export const updateEmpleadoById = async (req, res) => {
+    try{
+    const updatedEmpleado = await empleado.findByIdAndUpdate(req.params.empleadoId, req.body, {
+        new: true
+    });
+    res.status(200).json(new BaseResponse(
+        "Empleados",
+        "Empleado actualizado",
+        updatedEmpleado));
+    }catch (error){
+    res.status(400).json(new ResponseError(
+        "Error al actualizar el empleado",
+        error.message
+    ));
+    }
+};
+
+export const deleteEmpleadoById = async (req, res) => {
+    try {
+        const empleadoIdDelete = await empleado.findByIdAndDelete(req.params.empleadoId);
+        res.status(200).json(new BaseResponse(
+            "Departamentos",
+            "Se elimino un departamento con exito",
+            empleadoIdDelete));
+    }catch (error) {
+        res.status(400).json(new ResponseError(
+            "Error al eliminar el departamento",
+            error.message
+        ));
+    }
+}
