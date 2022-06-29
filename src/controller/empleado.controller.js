@@ -1,4 +1,3 @@
-import departamento from "../model/departamento";
 import Departamento from "../model/departamento";
 import empleado from "../model/empleado"
 import BaseResponse from "../response/BaseResponse";

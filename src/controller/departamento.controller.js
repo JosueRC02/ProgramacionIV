@@ -1,5 +1,4 @@
 import departamento from "../model/departamento"
-import organizacion from "../model/organizacion";
 import Organizacion from "../model/organizacion"	
 import BaseResponse from "../response/BaseResponse";
 import ResponseError from "../response/ResponseError";
