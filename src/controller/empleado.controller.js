@@ -74,3 +74,18 @@ export const deleteEmpleadoById = async (req, res) => {
         ));
     }
 }
+
+export const getNEmpleado = async (req, res) => {
+    try {
+        const ListaEmpleados = await empleado.find({nombre_departamento:req.params.empleadoId});
+        res.json(new BaseResponse(
+            "Departamentos",
+            "Retorna todos las departamentos",
+            ListaEmpleados));
+    } catch (error) {
+        res.status(400).json(new ResponseError(
+            "Error al retornar los departamentos",
+            error.message
+        ));
+    }
+};

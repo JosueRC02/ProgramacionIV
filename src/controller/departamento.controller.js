@@ -77,7 +77,7 @@ export const deleteDepartamentoById = async (req, res) => {
 
 export const getNDepartamento = async (req, res) => {
     try {
-        const ListaDepartamentos = await organizacion.findById(req.params.organizacionId);
+        const ListaDepartamentos = await departamento.find({organizacion:req.params.organizacionId});
         res.json(new BaseResponse(
             "Departamentos",
             "Retorna todos las departamentos",

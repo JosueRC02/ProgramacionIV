@@ -6,12 +6,6 @@ const casos_abiertosSchema = new Schema({
         type: String,
         required: true
     },
-
-    codigo_tramite:{
-        ref: "tramite", 
-        type: Schema.Types.ObjectId
-    },
-
     fecha_apertura_caso:{
         type: Date,
         required: true
@@ -20,6 +14,10 @@ const casos_abiertosSchema = new Schema({
     fecha_finalizacion_caso:{
         type: Date,
         required: true
+    },
+    codigo_tramite:{
+        ref: "tramite", 
+        type: Schema.Types.ObjectId
     },
     
 },{

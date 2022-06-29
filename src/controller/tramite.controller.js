@@ -71,3 +71,19 @@ export const deleteTramiteById = async (req, res) => {
         ));
     }
 }
+
+export const getNTramite = async (req, res) => {
+    try {
+        const ListaDepartamentos = await tramite.find({codigo_departamento:req.params.tramiteId});
+        res.json(new BaseResponse(
+            "Departamentos",
+            "Retorna todos las departamentos",
+            ListaDepartamentos));
+    } catch (error) {
+        res.status(400).json(new ResponseError(
+            "Error al retornar los departamentos",
+            error.message
+        ));
+    }
+
+};
