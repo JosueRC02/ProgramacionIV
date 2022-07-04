@@ -50,11 +50,10 @@ export const signInOrganizacion = async (req, res) => {
                 "La contraseña no coincide",
                 "No digitó bien la contraseña de la organizacion"
             ));
-
         return res.status(200).json(new BaseResponse(
             "Contraseña correcta",
             "La contraseña coincide con la del usuario",
-            matchPassword
+            organizacionFound.id
         ));
     } catch (error) {
         res.status(400).json(new ResponseError(
